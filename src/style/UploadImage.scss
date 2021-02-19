@@ -1,0 +1,174 @@
+.uploadImage {
+    box-sizing: border-box;
+    margin-bottom: 18px;
+
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__draggable {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &.isMultiple {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__text {
+        display: block;
+        margin-bottom: 4px;
+        line-height: 1.2;
+        width: 100%;
+
+        vertical-align: bottom;
+        font-size: 12px;
+        font-weight: 400;
+        color: #747678;
+    }
+
+    &__deleteImage {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20px;
+        height: 20px;
+
+        padding: 0;
+        margin: 0;
+
+        background: rgba(255, 255, 255, 0.3);
+        border: none;
+        cursor: pointer;
+        outline: none;
+        font-size: 20px;
+        line-height: 1;
+        color: rgba(0, 0, 0, 0.6);
+
+        &:hover {
+            color: $red;
+        }
+    }
+
+    &__deleteIcon {
+        max-width: 100%;
+        max-height: 100%;
+        width: 100%;
+        height: 100%;
+        fill: rgba(226, 60, 60, 0.9);
+    }
+
+    &__text {
+        display: block;
+        width: 100%;
+    }
+
+    &__galleryItem {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 400px;
+        min-height: 70px;
+        min-width: 50px;
+        margin: 0 10px 10px 0;
+        padding: 1px;
+
+        background-color: $graySoft;
+        border: 1px solid $gray;
+        border-radius: 2px;
+        overflow: hidden;
+
+        &.add {
+            align-items: center;
+            flex-shrink: 0;
+
+            background: none;
+            border: none;
+        }
+    }
+
+    &__thumb {
+        cursor: grab;
+        max-width: 120px;
+        object-fit: cover;
+
+        &:active {
+            cursor: grabbing;
+        }
+    }
+
+    &__ghost {
+        opacity: 0.4;
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__errorMessage {
+        display: block;
+        width: 100%;
+
+        font-size: 10px;
+        color: $red;
+        font-weight: 400;
+        line-height: 1.2;
+    }
+
+    &__hiddenInput {
+        display: none;
+    }
+
+    &__galleryBtn {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    &__galleryBtnImage {
+        position: relative;
+
+        display: block;
+        width: 96px;
+        height: 69px;
+
+        background: $graySoft;
+        border: 1px solid $formBorder;
+        border-radius: 2px;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            left: calc(50% - 12px);
+            top: calc(50% - 1px);
+
+            width: 24px;
+            height: 2px;
+
+            background: $formBorder;
+
+            transition: background 0.12s ease;
+        }
+
+        &:after {
+            transform: rotate(90deg);
+        }
+
+        &:hover:before,
+        &:hover:after {
+            background: $mainGreen;
+        }
+    }
+
+    &__svgHidden {
+        display: none;
+    }
+}

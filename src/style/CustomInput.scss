@@ -1,0 +1,160 @@
+.input {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+
+    font-family: $FontFamily;
+    padding-bottom: 18px;
+
+    &.marginBottom {
+        margin-bottom: 20px;
+    }
+
+    &.isError {
+        .input__input,
+        .customDate-input,
+        .counter {
+            border: 1px solid $red !important;
+            background-color: $white !important;
+        }
+    }
+
+    &.isSuccess {
+        .input__input {
+            border: 1px solid $mainGreen;
+            background-color: $white;
+        }
+    }
+
+    &.isFocused {
+        .input__input {
+            background-color: $white;
+        }
+    }
+
+    .input__input,
+    .isSuccess .input__input {
+        &[readonly],
+        &[disabled] {
+            background-color: #f3f4f4;
+            border-color: transparent;
+            cursor: default;
+            color: #b1b4b8;
+        }
+    }
+
+    &.autocomplete {
+        position: absolute;
+        z-index: 5;
+        top: calc(100% - 1px);
+        left: 0;
+
+        width: 100%;
+        max-height: 350px;
+
+        background: $white;
+        overflow-y: auto;
+        border: 1px solid $mainGreen;
+        border-radius: 0 0 2px 2px;
+        border-top: none;
+    }
+
+    &.autocompleteItem {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: 36px;
+        padding: 0 10px;
+
+        font-size: 12px;
+        background-color: $white;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $graySoft;
+        }
+    }
+
+    &__wrapper {
+        display: block;
+        width: 100%;
+
+        font-size: 12px;
+        font-weight: 400;
+        color: $additionalText;
+    }
+
+    &__errorMessage {
+        position: absolute;
+        top: calc(100% - 13px);
+        left: 0;
+        width: 100%;
+        margin: 0;
+
+        font-size: 10px;
+        color: $red;
+        font-weight: 400;
+        line-height: 1.2;
+        text-align: left;
+    }
+
+    &__labelText {
+        display: block;
+        margin-bottom: 4px;
+
+        color: #747678;
+        line-height: 1.2;
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    &__input {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        width: 100%;
+        height: 36px;
+        padding: 0 10px;
+
+        text-overflow: ellipsis;
+        overflow: hidden;
+        border-radius: 2px;
+        border: 1px solid $inputBorder;
+        background-color: $graySoft;
+        color: $mainText;
+        font-size: 12px;
+        box-shadow: none;
+
+        transition: border 0.1s ease, background-color 0.1s ease;
+
+        &::-ms-clear {
+            display: none;
+        }
+
+        &::placeholder {
+            color: $gray;
+        }
+
+        &--tel {
+            padding-left: 35px;
+        }
+    }
+
+    &.phonePrefix {
+        position: absolute;
+        top: 0;
+        left: 20px;
+        display: flex;
+        align-items: center;
+        height: 35px;
+
+        color: #3d4248;
+        font-size: 12px;
+    }
+}
+
+
+

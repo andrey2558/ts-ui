@@ -1,0 +1,21 @@
+@import 'globals';
+
+.defaultHeading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &__headBox {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: auto;
+        padding-left: 30px;
+    }
+
+    &__title {
+        margin: 0;
+        padding: 0;
+    }
+}

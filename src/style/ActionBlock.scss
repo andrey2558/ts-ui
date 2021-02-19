@@ -1,0 +1,35 @@
+.actionBlock {
+    z-index: 5;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    padding: 0 30px;
+    box-sizing: border-box;
+
+    border: 1px solid $gray;
+    border-radius: 2px 2px 0 0;
+    background: #fff;
+
+    @include below($md-desktop) {
+        padding: 0 15px;
+    }
+
+    &__btn {
+        margin-right: 20px;
+    }
+
+    &__blockDisabled > * {
+        pointer-events: none;
+        filter: grayscale(0.3);
+        opacity: 0.4;
+        user-select: none;
+    }
+
+    &__cancelButtons {
+        display: flex;
+        align-items: center;
+    }
+}

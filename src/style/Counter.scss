@@ -1,0 +1,129 @@
+.counter {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 90px;
+    height: 36px;
+    box-sizing: border-box;
+
+    background-color: $white;
+    font-family: $FontFamily;
+    border: 1px solid $gray;
+    border-radius: 2px;
+    overflow: hidden;
+
+    &__item {
+        position: relative;
+
+        width: calc(100% / 3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1px;
+
+        background: $white;
+        transition: all ease 0.15s;
+        border: none;
+        border-radius: 2px;
+        cursor: pointer;
+
+        &.counterButton:hover {
+            background: $additionalGreen;
+
+            .counterIcon {
+                fill: $white;
+            }
+        }
+    }
+
+    &__field {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+
+        appearance: none;
+        font-size: 14px;
+        color: #3d4248;
+        font-weight: 400;
+        text-align: center;
+        box-shadow: none;
+        border: 0;
+        box-sizing: border-box;
+        text-overflow: ellipsis;
+
+        &:hover {
+            background: $white;
+        }
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &[type='number'] {
+            -moz-appearance: textfield;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40%;
+        height: 40%;
+
+        fill: #3d4248;
+
+        transition: fill 0.15s ease;
+    }
+
+    &.isDisabled {
+        border: 1px solid #f3f4f4;
+        background-color: #f3f4f4;
+
+        .counter__item {
+            background-color: #f3f4f4;
+            cursor: default;
+
+            &:hover {
+                background-color: #f3f4f4;
+                cursor: default;
+
+                .counter__icon {
+                    cursor: default;
+                    fill: $mainText;
+                }
+            }
+        }
+
+        .counter__field {
+            background-color: #f3f4f4;
+        }
+    }
+
+    &--counterLarge {
+        width: 400px;
+        max-width: 100%;
+
+        &__item:nth-child(2) {
+            width: 80%;
+        }
+
+        &__item:nth-child(1),
+        &__item:nth-child(3) {
+            width: 10%;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+

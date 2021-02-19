@@ -1,0 +1,112 @@
+.checkbox {
+    position: relative;
+    display: block;
+    padding-left: 16px;
+    box-sizing: border-box;
+
+    min-height: 16px;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    user-select: none;
+
+    &.checkboxDisabled {
+        pointer-events: none;
+        opacity: 0.6;
+    }
+
+    &__checkboxRadio {
+        .checkboxCustom {
+            border-radius: 50%;
+
+            &:before {
+                border-radius: 50%;
+            }
+        }
+    }
+
+    &__checkboxRoll {
+        padding-left: 32px;
+
+        .checkboxCustom {
+            width: 32px;
+
+            border-radius: 25px;
+
+            &:before {
+                left: 2px;
+                right: auto;
+
+                background-color: #747678;
+                border-radius: 50%;
+                transform: translateX(0);
+                transition: transform ease 0.2s;
+            }
+        }
+
+        &.isActive {
+            .checkboxCustom:before {
+                transform: translateX(15px);
+            }
+        }
+    }
+
+    &__checkboxText {
+        display: block;
+        margin-left: 10px;
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    &__checkboxInput {
+        display: none;
+    }
+
+    &__checkboxCustom {
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+
+        border: 1px solid $gray;
+        border-radius: 2px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            width: 10px;
+            height: 10px;
+            margin: auto;
+
+            background: none;
+            border-radius: 1px;
+
+            transition: background-color 0.1s ease;
+        }
+    }
+
+    &.checkboxDisabled {
+        .checkboxCustom {
+            background: rgba($gray, 0.2);
+        }
+    }
+
+    &.isActive {
+        .checkboxCustom {
+            &:before {
+                background: #3aa18e;
+            }
+        }
+    }
+}
+
